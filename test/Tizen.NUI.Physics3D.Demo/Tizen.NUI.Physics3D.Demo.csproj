@@ -2,19 +2,22 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <OutputType>Exe</OutputType>
-    <AssemblyName>Physics3DSample</AssemblyName>
+    <AssemblyName>Physics3DDemo</AssemblyName>
   </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
       <DebugType>portable</DebugType>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
       <DebugType>None</DebugType>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Tizen.NET.Sdk" Version="1.0.9" />
     <ProjectReference Include="../../src/Tizen/Tizen.csproj" />
     <ProjectReference Include="../../src/Tizen.NUI/Tizen.NUI.csproj" />
     <ProjectReference Include="../../src/Tizen.NUI.Physics3D/Tizen.NUI.Physics3D.csproj" />
+    <ProjectReference Include="../../src/Tizen.NUI.Scene3D/Tizen.NUI.Scene3D.csproj" />
   </ItemGroup>
   <PropertyGroup>
     <NeedInjection>True</NeedInjection>

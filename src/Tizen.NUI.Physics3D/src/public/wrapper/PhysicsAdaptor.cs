@@ -293,22 +293,33 @@ namespace Tizen.NUI.Physics3D
         }
 
         /// <summary>
+        /// Set the root layer. All actors previously parented on the old root will be moved.
+        /// </summary>
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public void SetRootView(View view)
+        {
+            Interop.Adaptor.SetRootActor(SwigCPtr, View.getCPtr(view));
+            if(NDalicPINVOKE.SWIGPendingException.Pending)
+                throw NDalicPINVOKE.SWIGPendingException.Retrieve();
+        }
+
+        /// <summary>
         ///
         /// </summary>
         //public Layer GetRootLayer()... it's needed for 2 things - touch and finding actors.
         // Provide a PhysisActor api to get View back
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public Layer GetRootLayer()
+        public View GetRootView()
         {
             global::System.IntPtr cPtr = Interop.Adaptor.GetRootActor(SwigCPtr);
             if(NDalicPINVOKE.SWIGPendingException.Pending)
                 throw NDalicPINVOKE.SWIGPendingException.Retrieve();
 
             // @todo Test against registry?
-            Layer layer = new Layer(cPtr, false);
+            View view = new View(cPtr, false);
             if(NDalicPINVOKE.SWIGPendingException.Pending)
                 throw NDalicPINVOKE.SWIGPendingException.Retrieve();
-            return layer;
+            return view;
         }
 
         /// <summary>
